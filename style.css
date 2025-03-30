@@ -1,0 +1,158 @@
+nav a:hover {
+    color: #7028ff !important;
+    /* Màu xanh dương nhạt */
+}
+
+
+/* Đổi màu chữ khi hover vào dropdown */
+
+.dropdown-toggle:hover {
+    color: #7028ff !important;
+    /* Xanh dương */
+    transition: color 0.2s ease-in-out;
+}
+
+
+/* Đổi màu chữ trong dropdown menu */
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #5cb3ff !important;
+    /* Xám đậm */
+    color: #ffffff !important;
+    /* Xanh dương */
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+/* Tùy chỉnh dropdown */
+
+.navbar {
+    display: flex;
+    gap: 30px;
+    /* Khoảng cách giữa các mục trong navbar */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Ẩn menu con mặc định */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #1e293b;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 8px 0;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+    transform: translateY(-10px);
+}
+
+
+/* Hiển thị menu con khi hover */
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Hiệu ứng hover cho từng mục trong dropdown */
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+    background-color: #374151;
+    color: #38bdf8;
+    /* Xanh dương */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 8px 0;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu.left {
+    right: 0;
+    left: auto;
+}
+
+.dropdown-menu.top {
+    bottom: 100%;
+    top: auto;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: auto;
+    right: 0;
+    /* Căn dropdown về bên trái nếu bị tràn phải */
+    min-width: 200px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar a:hover,
+.dropdown-menu .dropdown-item:hover {
+    transform: scale(1.1);
+    /* Phóng to chữ lên 20% */
+    transition: transform 0.2s ease-in-out;
+}
+
+header {
+    width: 99%; /* Giảm chiều rộng để có khoảng trống hai bên */
+    max-width: 1400px; /* Giới hạn chiều rộng */
+    height: 55px; /* Điều chỉnh chiều cao */
+    position: fixed; /* Giữ header cố định */
+    top: 10px; /* Hạ xuống một chút so với top */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translateX(-50%); /* Dịch header về chính giữa */
+    background: white; /* Màu nền */
+    border-radius: 15px; /* Bo góc */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Canh đều nội dung */
+    padding: 0 20px; /* Tạo khoảng cách hai bên */
+    z-index: 1000;
+}
+
+section h1, section h2, section h3, section p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Đổ bóng nhẹ */
+}
