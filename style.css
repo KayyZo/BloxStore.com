@@ -136,23 +136,113 @@ nav a:hover {
 }
 
 header {
-    width: 99%; /* Giảm chiều rộng để có khoảng trống hai bên */
-    max-width: 1400px; /* Giới hạn chiều rộng */
-    height: 55px; /* Điều chỉnh chiều cao */
-    position: fixed; /* Giữ header cố định */
-    top: 10px; /* Hạ xuống một chút so với top */
-    left: 50%; /* Căn giữa theo chiều ngang */
-    transform: translateX(-50%); /* Dịch header về chính giữa */
-    background: white; /* Màu nền */
-    border-radius: 15px; /* Bo góc */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    position: relative;
+    width: 100vw;
+    max-width: 1300px;
+    min-width: 600px;
+    margin: 10px auto; /* Hạ xuống 50px từ trên xuống */
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Canh đều nội dung */
-    padding: 0 20px; /* Tạo khoảng cách hai bên */
+    justify-content: space-between;
+    padding: 10px 30px;
     z-index: 1000;
+    transition: all 0.3s ease-in-out;
 }
+
 
 section h1, section h2, section h3, section p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Đổ bóng nhẹ */
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: black;
+    margin: 5px auto;
+}
+
+body {
+    background-image: url('https://images2.alphacoders.com/134/1348597.png'); /* Đặt URL hình nền */
+    background-size: cover; /* Ảnh sẽ phủ kín toàn bộ trang */
+    background-position: center; /* Căn giữa ảnh */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    background-attachment: fixed; /* Giữ cố định khi cuộn */
+}
+
+.large-text {
+    font-size: 24px; /* Chữ lớn hơn */
+    font-weight: bold; /* In đậm (tùy chọn) */
+}
+
+.section-box {
+    border: 2px solid black; /* Viền đen */
+    border-radius: 10px; /* Bo góc */
+    padding: 15px; /* Khoảng cách bên trong */
+    background-color: white; /* Nền trắng */
+}
+
+.marquee-container {
+    width: 90%; /* Chiếm 80% chiều ngang */
+    max-width: 1300px; /* Giới hạn chiều rộng tối đa */
+    margin: 10px auto; /* Căn giữa theo chiều ngang */
+    overflow: hidden;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Căn giữa nội dung */
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap; /* Không xuống dòng */
+    animation: marquee 20s linear infinite; /* Chạy 10s, lặp vô hạn */
+    font-size: 16px;
+    padding-left: 100%; /* Để chữ bắt đầu từ ngoài màn hình */
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.red-text { color: red; font-weight: bold; }
+.blue-text { color: blue; font-weight: bold; }
+.purple-text { color: purple; font-weight: bold; }
+
+@keyframes fireEffect {
+    0% { filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.8)); }
+    50% { filter: drop-shadow(0 0 15px rgba(255, 69, 0, 1)); }
+    100% { filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.8)); }
+}
+
+.btn-fire {
+    background: url('https://bananacat.store/_assets/images/stores/view-all.gif') no-repeat center;
+    background-size: contain;
+    width: 150px; /* Điều chỉnh kích thước theo ảnh */
+    height: 50px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hiệu ứng nhấn nút */
+.btn-fire:active {
+    transform: scale(0.95);
 }
